@@ -25,4 +25,12 @@ module ApplicationHelper
     end
   end
 
+  def show_username
+    if current_user == @user
+      "Welcome back, #{current_user.name}!".html_safe
+    else
+      "#{@user.name}'s Page".html_safe
+    end
+  end
+
 end

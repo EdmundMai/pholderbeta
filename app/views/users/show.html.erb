@@ -1,13 +1,6 @@
-	<% provide(:title, "Welcome, #{@user.name}!") %>
+	<% provide(:title, show_username) %>
 
 
-<% if signed_in? %>
-	<% unless @user == current_user || current_user.requested_friends.include?(@user) || current_user.friends.include?(@user) || current_user.pending_friends.include?(@user) %>
-		<%= form_for(:friendship, :url => user_friends_path(:user_id => current_user.id, :friend_id => @user.id)) do |f| %>
-		<%= f.submit "Add to my Friends" %>
-		<% end %>
-	<% end %>
-<% end %>
 
 
 	<div class="friendwrapper">
@@ -39,14 +32,23 @@
 			<% end %>
 		<% end %>
 
-		<% @user.albums.each do |album| %>
+		<% if current_user.friends.include?(@user) || current_user == @user %>
+			<% @user.albums.each do |album| %>
 			<div class="albumthumb">
 				<%= link_to image_tag(!album.photos.empty? ? album.photos.first.avatar.url(:medium) : ("questionmark.png"), :size => "150x150"), user_album_path(@user, album) %>
 				<br>
 				<%= album.name %>
 			</div>
+			<% end %>
+		<% else %>
+			<div>
+				<h2>You are not friends with <%= @user.name %>.</h2>
+			</div>
+
 		<% end %>
 	</div>
+
+
 
 </div>
 	

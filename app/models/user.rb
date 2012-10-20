@@ -18,7 +18,10 @@ class User < ActiveRecord::Base
   has_many :requested_friends, :through => :friendships, :source => :friend, :conditions => "status = 'requested'", :order => :created_at
   has_many :pending_friends, :through => :friendships, :source => :friend, :conditions => "status = 'pending'", :order => :created_at
 
-  has_attached_file :profilepic
+  has_attached_file :profilepic,
+            :storage => :s3,
+            :s3_credentials => "#{Rails.root}/config/s3.yml",
+            :path => "/:style/:id/:filename"
 
   before_save { |user| user.email = email.downcase }
 

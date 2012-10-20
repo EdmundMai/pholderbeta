@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require fancybox
 //= require jquery-fileupload/basic
+//= require jquery-fileupload/vendor/tmpl
 //= require s3_direct_upload
 //= require_tree .
 

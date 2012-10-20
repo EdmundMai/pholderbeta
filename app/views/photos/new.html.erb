@@ -1,8 +1,11 @@
 
+<%= form_for([@user, @album, @photo], :html => { :multipart => true }) do |f| %>
 
-<%= s3_uploader_form post: user_album_photos_url, as: "photo[avatar]", id: "myS3Uploader" do %>
-  <%= file_field_tag :file, multiple: true %>
+<%= f.file_field :avatar, multiple: true, name: "photo[avatar]" %>
+
 <% end %>
+
+
 
 
 <div id="pics">
