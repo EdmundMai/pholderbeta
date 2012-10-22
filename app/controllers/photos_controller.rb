@@ -12,11 +12,6 @@ class PhotosController < ApplicationController
 	  @album = Album.find(params[:album_id])
       @photo = @album.photos.build(params[:photo])
       @photo.save
-      # if @photo.save
-      # 	redirect_to user_album_path(@user, @album), notice: "Album successfully created."
-      # else
-      # 	render 'new'
-      # end
 	end
 
 	def show
@@ -28,9 +23,15 @@ class PhotosController < ApplicationController
 	  @user = User.find(params[:user_id])
 	  @album = @user.albums.find(params[:album_id])
 	  @photo = @album.photos.find(params[:id])
-	  @photo.destroy
+	  # @photo.destroy
 	  flash[:success] = "Photo successfully deleted."
-	  redirect_to user_album_path(@user, @album)
+	  respond_to do |format|
+	    if @photo.destroy
+	      format.js
+	      # format.json { render json: @photo, status: :created, location: @photo}
+		  # redirect_to user_album_path(@user, @album)
+		end
+	  end
 	end
 
 end

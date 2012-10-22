@@ -50,6 +50,11 @@ class AlbumsController < ApplicationController
 	end
 
 	def destroy
+	  @user = User.find(params[:user_id])
+	  @album = @user.albums.find(params[:id])
+	  @album.destroy
+	  flash[:notice] = "Album successfully deleted."
+	  redirect_to user_path(@user)
 	end
 
 

@@ -1,10 +1,16 @@
 
+<div class="uploadreminder">
+	Upload multiple pictures at once or drag them directly to the browser!
+</div>
 <%= form_for([@user, @album, @photo], :html => { :multipart => true }) do |f| %>
 
 <%= f.file_field :avatar, multiple: true, name: "photo[avatar]" %>
 
 <% end %>
 
+<div class="finisheduploading">
+	<%= link_to "Back to album", user_album_path(@user, @album) %>
+</div>
 
 
 

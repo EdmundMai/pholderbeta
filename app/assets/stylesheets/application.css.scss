@@ -23,10 +23,63 @@ body {
 	margin: 0 auto;
 }
 
-.alert {
+.alert-error {
+  border: 1px solid red;
+  background: red;
+  opacity: .6;
+}
+
+
+
+.alert-success, .alert-notice {
 	border: 1px solid green;
 	background: lime;
 	opacity: .6;
+}
+
+.uploadreminder {
+  padding: 20px;
+}
+
+.finisheduploading {
+  padding: 0 20px;
+}
+
+#signinbutton {
+    -moz-box-shadow:inset 0px 1px 13px 0px #f29c93;
+  -webkit-box-shadow:inset 0px 1px 13px 0px #f29c93;
+  box-shadow:inset 0px 1px 13px 0px #f29c93;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fe1a00), color-stop(1, #ce0100) );
+  background:-moz-linear-gradient( center top, #fe1a00 5%, #ce0100 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fe1a00', endColorstr='#ce0100');
+  background-color:#fe1a00;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:1px solid #d83526;
+  display:inline-block;
+  color:#ffffff;
+  font-family:arial;
+  font-size:26px;
+  font-weight:bold;
+  padding:18px 44px;
+  text-decoration:none;
+  text-shadow:1px 1px 5px #b23e35;
+  margin: 15px 0;
+}
+
+.signinform {
+
+}
+
+
+
+#checkbox {
+  display: inline;
+}
+
+#rememberme {
+  display: inline;
 }
 
 .miniprofilepic {
@@ -37,6 +90,10 @@ body {
 	width: 200px;
 	float: right;
 	min-height: 100%;
+}
+
+#signinheader {
+  color: red;
 }
 
 .albumswrapper {

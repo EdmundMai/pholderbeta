@@ -4,14 +4,6 @@
 
 <div class="destroypicswrapper">
 	<% if @album.photos.any? %>
-		<% @album.photos.each do |photo| %>
-			<div class="picthumb">
-				<%= link_to image_tag(photo.avatar.url ? photo.avatar.url(:small) : @album.name), root_url %>
-				<br>
-				<%= link_to "Delete", user_album_photo_path(@user, @album, photo), method: :delete, data: { confirm: "Are you sure? "} %>
-			</div>
-		<% end %> 
-	<% else %>
+		<%= render :partial => 'photodestroy', :collection => @album.photos, :as => :photo %>
+	<% end %> 
 </div>
-
-<% end %>

@@ -5,7 +5,12 @@ class SessionsController < ApplicationController
 
   def create
   	user = User.find_by_email(params[:session][:email])
-  	if user && user.authenticate(params[:session][:password])
+  	if user && (!params[:session][:email].blank?) && user.authenticate(params[:session][:password])
+      if params[:remember_me]
+        cookies.permanent[:remember_token] = user.remember_token
+      else
+        cookies[:remember_token] = user.remember_token
+      end
   	  sign_in user
   	  redirect_to user_path(user)
   	else
