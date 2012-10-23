@@ -14,9 +14,7 @@
 				<%= link_to "log out", signout_path, method: "delete", :id =>"logoutlink" %>
 			<% else %>
 				<%= link_to "sign up", new_user_path, :id => "signuplink" %>
-				<!-- <a href="#" id="signuplink">Sign Up</a> -->
 				<%= link_to "log in", signin_path, :id => "loginlink" %>
-				<!-- <a href="#" id="loginlink">Log In</a> -->
 			<% end %>
 			</div>
 		</nav>

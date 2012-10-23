@@ -1,5 +1,4 @@
-<h3><%= user_name(@user) %> friends:</h3>
-	<% @user.friends.each do |friend| %>
+	<% user.friends.each do |friend| %>
 	<%= link_to (image_tag friend.profilepic? ? friend.profilepic : "questionmark.png", :size => "50x50"), user_path(friend) %>
 	<%= link_to friend.name, user_path(friend) %> <br>
 	<% end %>

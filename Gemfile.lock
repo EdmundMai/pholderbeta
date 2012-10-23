@@ -169,6 +169,7 @@ DEPENDENCIES
   fancybox-rails
   jquery-fileupload-rails
   jquery-rails
+  mail
   paperclip
   pg
   rails (= 3.2.8)

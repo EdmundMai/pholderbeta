@@ -1,0 +1,14 @@
+<h1>Forgot password?</h1>
+<p>Type in your email and we'll send you your password.</p>
+
+<label>Email:</label>
+
+<%= form_for :new_password, :url => password_resets_path do |f| %>
+
+<%= f.text_field :email %>
+
+<br>
+
+<%= f.submit "Submit", :id => "forgotpasswordbutton" %>
+
+<% end %>

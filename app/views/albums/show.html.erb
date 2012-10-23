@@ -1,9 +1,9 @@
 
 	<div class="hostwrapper">
 		<h3>Hosts:</h3>
-		<% @album.users.each do |user| %>
-		<%= link_to user.name, user_path(user) %> <br>
-		<% end %>
+
+		<%= render :partial => "users/profilepic", :collection => @album.users, :as => :user %>
+	
 	</div>
 
 	<div class="albumswrapper">

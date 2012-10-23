@@ -5,9 +5,14 @@
 
 	<br>
 	<label>Hosts</label>
-	<% @user.friends.each do |friend| %>
-	<%= friend.name %>
-	<%= check_box_tag 'album[user_ids][]', friend.id, @album.users.include?(friend) %>
+
+	<% if @user.friends.count != 0 %>
+		<% @user.friends.each do |friend| %>
+			<%= friend.name %>
+			<%= check_box_tag 'album[user_ids][]', friend.id, @album.users.include?(friend) %>
+		<% end %>
+	<% else %>
+		You currently have no friends. Find them <%= link_to "here", users_path %>.
 	<% end %>
 
 	<%= f.label :description %>

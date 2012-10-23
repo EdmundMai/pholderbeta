@@ -1,9 +1,10 @@
 <% provide(:title, "Edit album") %>
 
 <%= render 'form' %>
-
+<div class="clearfix">
 <div class="destroypicswrapper">
 	<% if @album.photos.any? %>
 		<%= render :partial => 'photodestroy', :collection => @album.photos, :as => :photo %>
 	<% end %> 
+</div>
 </div>

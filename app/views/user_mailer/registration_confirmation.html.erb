@@ -1,0 +1,16 @@
+Dear <%= @user.name %>,
+
+<p>
+	Welcome to Pholder! Get started by finding and inviting <%= link_to "friends", users_url %> so that you can exclusively upload and view pictures with each other.
+</p>
+
+<p>
+	<%= link_to "View profile", user_url(@user) %>
+	<%= link_to "Edit profile", edit_user_url(@user) %>
+</p>
+
+<p>
+	Sincerely, <br>
+	Pholder Staff
+</p>
+

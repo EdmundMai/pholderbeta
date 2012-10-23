@@ -1,4 +1,6 @@
 Pholder::Application.routes.draw do
+  
+
   resources :users do
     resources :friends
     resources :albums do
@@ -6,15 +8,17 @@ Pholder::Application.routes.draw do
     end
   end
 
+  resources :password_resets, only: [:new, :create]
+
   resources :friendships, only: [:create, :destroy]
 
   resources :sessions, only: [:new, :create, :destroy]
 
-  match '/about',   to: 'home#about'
-  match '/help',    to: 'home#help'
-  match '/contact', to: 'home#contact'
-  match '/signin',  to: 'sessions#new'
-  match '/signout', to: 'sessions#destroy', via: :delete
+  match '/about',     to: 'home#about'
+  match '/feedback',  to: 'home#feedback'
+  match '/contact',   to: 'home#contact'
+  match '/signin',    to: 'sessions#new'
+  match '/signout',   to: 'sessions#destroy', via: :delete
 
   root :to => "home#index"
 

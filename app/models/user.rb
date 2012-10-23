@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
             :path => "/:style/:id/:filename"
 
   before_save { |user| user.email = email.downcase }
+  before_save { |user| if user.new_record? then create_remember_token end }
 
   def name_with_initial
     "#{name}"

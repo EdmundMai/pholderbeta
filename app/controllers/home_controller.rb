@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   def help
   end
 
-  def about
+  def feedback
   end
 
   def contact

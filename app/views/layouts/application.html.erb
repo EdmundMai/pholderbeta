@@ -10,15 +10,15 @@
 	<div class="bigwrapper">
 
 
-	<%= render 'layouts/header' %>
-	
-	<% flash.each do |key, value| %>
-		<%= content_tag(:div, value, class: "alert alert-#{key}") %>
-	<% end %>
+		<%= render 'layouts/header' %>
+		<div id="body">
+		<% flash.each do |key, value| %>
+			<%= content_tag(:div, value, class: "alert alert-#{key}") %>
+		<% end %>
 
-		<%= yield %>
-
-	<%= render 'layouts/footer' %>
+			<%= yield %>
+		</div>
+		<%= render 'layouts/footer' %>
 	</div>
 </body>
 </html>
