@@ -129,11 +129,6 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.11.0)
-    s3_direct_upload (0.0.3)
-      coffee-rails (~> 3.2.1)
-      jquery-fileupload-rails (~> 0.3.4)
-      rails (~> 3.2)
-      sass-rails (~> 3.2.1)
     sass (3.2.1)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
@@ -174,7 +169,6 @@ DEPENDENCIES
   pg
   rails (= 3.2.8)
   rspec-rails
-  s3_direct_upload
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)
