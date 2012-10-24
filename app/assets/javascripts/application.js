@@ -15,7 +15,6 @@
 //= require fancybox
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
-//= require s3_direct_upload
 //= require_tree .
 
 $(document).ready(function() {
@@ -23,5 +22,5 @@ $(document).ready(function() {
   $("a.fancybox").fancybox();
   $("a.fancybox").attr('rel', 'gallery').fancybox();
 
-  $("#myS3Uploader").S3Uploader();
+  
 });
