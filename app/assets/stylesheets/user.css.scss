@@ -205,6 +205,7 @@ nav ul li {
 .picthumb {
 	width: 150px;
 	height: 150px;
+	margin-bottom: 15px;
 }
 
 .numberofalbums h1 {
@@ -234,7 +235,7 @@ nav ul li {
 }
 
 #firstimg {
-	top: 30px;
+	top: 20px;
 	left: 30px;
 	bottom: 0px;
 	-moz-transform: rotate(-15deg);
@@ -243,8 +244,8 @@ nav ul li {
 }
 
 #secondimg {
-	top: 70px;
-	left: 50px;
+	top: 120px;
+	right: 50px;
 	bottom: 0px;
 	-moz-transform: rotate(-35deg);
 	-webkit-transform: rotate(-35deg);
@@ -252,32 +253,37 @@ nav ul li {
 }
 
 #thirdimg {
-	bottom: 0px;
-	-moz-transform: rotate(15deg);
-	-webkit-transform: rotate(-15deg);
-	transform: rotate(-15deg);
+	bottom: 200px;
+	left: 30px;
+	-moz-transform: rotate(25deg);
+	-webkit-transform: rotate(-25deg);
+	transform: rotate(-25deg);
 }
 
 #fourthimg {
-	bottom: 30px;
+	bottom: 100px;
+	left: 150px;
 }
 
 #fifthimg {
-	left: 110px;
-	bottom: 330px;
+	right: 220px;
+	bottom: 310px;
 	-moz-transform: rotate(-10deg);
 	-webkit-transform: rotate(-10deg);
 	transform: rotate(-10deg);
 }
 
 #sixthimg {
-	left: 300px;
-	bottom: 200px;
+	right: 330px;
+	bottom: 20px;
+	-moz-transform: rotate(-30deg);
+	-webkit-transform: rotate(-30deg);
+	transform: rotate(-30deg);
 }
 
 #seventhimg {
-	bottom: 200px;
-	right: 100px;
+	bottom: 300px;
+	left: 20px;
 }
 
 .intro {
@@ -324,7 +330,6 @@ nav ul li {
 }
 
 .top {
-	border-bottom: 2px solid black;
 	height: 400px;
 	overflow: hidden;
 }

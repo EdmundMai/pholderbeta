@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require fancybox
+ *= require 'css/bootstrap.css'
  *= require_tree .
  */
 
@@ -36,8 +37,21 @@ html, body {
   }
 }
 
+#passwordform {
+  width: 400px;
+  margin: 0 auto;
+}
+
+#forgotlink {
+  margin: 0 25px;
+}
+
+.friendsholder {
+  margin :0 30px;
+}
+
 #body {
-  padding-bottom: 50px;
+  padding-bottom: 40px;
 }
 
 .bigwrapper {
@@ -51,6 +65,14 @@ html, body {
   border: 1px solid red;
   background: red;
   opacity: .6;
+}
+
+h1 {
+  color: red;
+}
+
+h1.black {
+  color: black;
 }
 
 footer a {
@@ -105,7 +127,8 @@ footer {
 }
 
 .signinform {
-
+  width: 400px;
+  margin: 50px auto;
 }
 
 
@@ -116,6 +139,10 @@ footer {
 
 #rememberme {
   display: inline;
+}
+
+.picthumb {
+  margin: 20px;
 }
 
 .miniprofilepic {
@@ -150,6 +177,11 @@ footer {
 .albumthumb {
 	width: 160px;
 	height: 200px;
+}
+
+.albumpic {
+  height: 150px;
+  overflow: auto;
 }
 
 .floatright {

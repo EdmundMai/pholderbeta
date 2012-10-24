@@ -33,10 +33,12 @@
 			<% end %>
 		<% end %>
 
-			<% if current_user == @user || current_user.friends.include?(@user) %>
+			<% if current_user == @user || @user.friends.include?(current_user) %>
 				<% @user.albums.each do |album| %>
 				<div class="albumthumb">
+					<div class="albumpic">
 					<%= link_to image_tag(!album.photos.empty? ? album.photos.first.avatar.url(:medium) : ("questionmark.png"), :size => "150x150"), user_album_path(@user, album) %>
+					</div>
 					<br>
 					<%= album.name %>
 				</div>

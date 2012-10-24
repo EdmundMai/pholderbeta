@@ -8,7 +8,7 @@ Pholder::Application.routes.draw do
     end
   end
 
-  resources :password_resets, only: [:new, :create]
+  resources :password_resets, only: [:new, :create, :edit, :destroy, :update]
 
   resources :friendships, only: [:create, :destroy]
 

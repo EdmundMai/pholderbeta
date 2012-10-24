@@ -33,6 +33,15 @@ class User < ActiveRecord::Base
     where('email LIKE ?', "%#{search}%")
   end
 
+  def generate_token(column)
+    self[column] = SecureRandom.urlsafe_base64
+  end
+
+  def send_password_reset
+    generate_token(:password_reset_token)
+    save!
+    UserMailer.forgot_password(self).deliver
+  end
 
   private
 

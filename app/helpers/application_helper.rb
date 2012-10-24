@@ -33,4 +33,8 @@ module ApplicationHelper
     end
   end
 
+  def create_remember_token(user)
+    user.remember_token = SecureRandom.urlsafe_base64
+  end
+
 end
