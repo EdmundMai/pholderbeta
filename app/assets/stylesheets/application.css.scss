@@ -103,7 +103,7 @@ footer {
   padding: 0 20px;
 }
 
-#signinbutton, #forgotpasswordbutton {
+#signinbutton, #forgotpasswordbutton, #newalbumbutton {
     -moz-box-shadow:inset 0px 1px 13px 0px #f29c93;
   -webkit-box-shadow:inset 0px 1px 13px 0px #f29c93;
   box-shadow:inset 0px 1px 13px 0px #f29c93;
@@ -141,9 +141,6 @@ footer {
   display: inline;
 }
 
-.picthumb {
-  margin: 20px;
-}
 
 .miniprofilepic {
 	margin-top: 10px;
@@ -155,8 +152,24 @@ footer {
 	min-height: 100%;
 }
 
+.friendwrapper {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.textalignleft {
+  text-align: left;
+  margin-left: 30px;
+}
+
 #signinheader {
   color: red;
+}
+
+
+.editprofilelogo {
+  text-align: center;
+  margin: 15px 0;
 }
 
 .albumswrapper {
@@ -186,6 +199,10 @@ footer {
 
 .floatright {
 	float: right;
+}
+
+.contactform {
+  float: left
 }
 
 .pagination {
@@ -229,6 +246,32 @@ footer {
       padding: 0.1em 0.25em;
     }
   }
+}
+
+h3.friends, h1.friends {
+  text-align: center;
+}
+
+.currentfriends, .friendequests {
+  width: 50%;
+  float: left;
+}
+
+.allusers {
+
+}
+
+.editprofform {
+  float: left;
+  margin-left: 20px;
+}
+
+#profpicbox {
+  width: 300px;
+}
+
+#userpic {
+  float: left;
 }
 
 .usersbox {

@@ -10,7 +10,6 @@
 <body class="clearfix">
 	<div class="bigwrapper">
 
-
 		<%= render 'layouts/header' %>
 		<div id="body">
 		<% flash.each do |key, value| %>
@@ -20,6 +19,8 @@
 			<%= yield %>
 		</div>
 		<%= render 'layouts/footer' %>
+
 	</div>
+
 </body>
 </html>

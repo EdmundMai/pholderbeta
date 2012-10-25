@@ -11,4 +11,9 @@ class UserMailer < ActionMailer::Base
   	@user = user
   	mail(:to => "#{user.name} <#{user.email}>", :subject => "Password for Your Pholder Account")
   end
+
+  def contact_us(name, email, comments)
+    @person = [name, email, comments]
+    mail(:to => "edmundmai@gmail.com", :subject => "#{name} <#{email}> has made comments")
+  end
 end

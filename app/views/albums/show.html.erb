@@ -8,7 +8,8 @@
 
 	<div class="albumswrapper">
 		<div class="numberofpictures">
-			<h1>This album currently has <%= pluralize(@album.photos.count, "photo") %></h1>
+			<h1><%= @album.name %></h1>
+			<h3>This album currently has <%= pluralize(@album.photos.count, "photo") %></h3>
 
 			<% if current_user.albums.include?(@album) %>
 			<%= link_to "Upload new pics!", new_user_album_photo_path(@user, @album) %> |

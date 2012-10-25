@@ -1,13 +1,21 @@
 
 
+<div class="editprofilelogo">
+	<%= link_to (image_tag "formlogo.png", :width => "200"), user_path(@user) %>
+</div>
+
 <%= form_for(@user) do |f| %>
 
-<div class="formhold">
-<div class="field">
-	<% if @user.profilepic? %>
-	<%= image_tag @user.profilepic.url %>
-	<% end %>
 
+<div class="formhold">
+
+<div id="profpicbox">
+	<% if @user.profilepic? %>
+	<%= image_tag @user.profilepic.url, :id => "userpic" %>
+	<% end %>
+</div>
+<div class="editprofform">
+<div class="field">
 	<%= f.label :profilepic, "Profile Picture" %>
 	<%= f.file_field :profilepic %>
 </div>
@@ -22,6 +30,10 @@
 
 <div>
 	<%= f.submit 'Submit', :class => 'submitbutton' %>
+</div>
+
+<%= link_to "Back", user_path(@user) %>
+
 </div>
 
 
@@ -41,6 +53,3 @@
 <% end %>
 <% end %>
 
-
-
-<%= link_to "Back", user_path(@user) %>

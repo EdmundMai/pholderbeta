@@ -2,7 +2,7 @@
 
 <%= render 'form' %>
 <div class="clearfix">
-<div class="destroypicswrapper">
+<div class="destroypicswrapper offset2">
 	<% if @album.photos.any? %>
 		<%= render :partial => 'photodestroy', :collection => @album.photos, :as => :photo %>
 	<% end %> 
