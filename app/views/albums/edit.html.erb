@@ -1,6 +1,8 @@
 <% provide(:title, "Edit album") %>
 
+<div class="editalbumform">
 <%= render 'form' %>
+</div>
 <div class="clearfix">
 <div class="destroypicswrapper offset2">
 	<% if @album.photos.any? %>
