@@ -10,9 +10,9 @@ I would be more than happy to take any suggestions since I am looking to improve
 
 
 Notes:
-I utilized a combination of jQuery File-Upload, Amazon S3, and Paperclip for convenient image uploading management
-for the user. Paperclip was used to manage photo properties, jQuery File-Upload was used for user-friendly multi-file
-uploads, and Amazon S3 for speedy uploads and scalable storage. I also added Twitter Bootstrap towards the completion
+I utilized a combination of jQuery File-Upload, Amazon S3, and Paperclip, and Fancybox for convenient image uploading 
+management for the user. Paperclip was used to manage photo properties, jQuery File-Upload was used for user-friendly multi-file
+uploads, Fancybox for image viewing and Amazon S3 for speedy uploads and scalable storage. I also added Twitter Bootstrap towards the completion
 of this project because I wanted to challenge myself in designing the website by hand first before utilizing
 external assistance.
 
