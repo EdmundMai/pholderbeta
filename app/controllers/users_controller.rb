@@ -9,7 +9,6 @@ class UsersController < ApplicationController
 	end
 
 	def new
-      @form_page = true
 	  @user = User.new
 
       respond_to do |format|

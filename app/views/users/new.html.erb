@@ -1,14 +1,15 @@
 <% provide(:title, 'Sign up') %>
 
-<% if @user.errors.any? %>
 
-		<% @user.errors.full_messages.each do |msg| %>
-			<%= content_tag(:div, msg, class: "alert alert-error clearfix") %>
-		<% end %>
-
-<% end %>
 
 <div class="span12 clearfix">
+	<% if @user.errors.any? %>
+
+		<% @user.errors.full_messages.each do |msg| %>
+			<%= content_tag(:div, msg, class: "alert alert-error") %>
+		<% end %>
+
+	<% end %>
 <div class="signupformholder span5 offset1">
 
 	<h1>Sign Up</h1>
