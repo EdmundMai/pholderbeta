@@ -8,7 +8,6 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require 'css/bootstrap.css'
  *= require_self
  *= require fancybox
  *= require_tree .
@@ -76,11 +75,11 @@ h1.black {
 }
 
 
-.bottomfooter a {
+#bottomfooter a {
   text-decoration: none;
 }
 
-.bottomfooter {
+#bottomfooter {
   text-align: center;
   padding: 10px;
   border-top: 2px solid black;
