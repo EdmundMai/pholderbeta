@@ -51,7 +51,7 @@ html, body {
 }
 
 #body {
-  padding-bottom: 40px;
+  padding-bottom: 35px;
 }
 
 .bigwrapper {
@@ -76,14 +76,18 @@ h1.black {
 }
 
 
-.bottomfooter a {
+.navbar-fixed-bottom a {
   text-decoration: none;
 }
 
-.bottomfooter {
-  border-top: 2px solid black;
-  padding: 5px;
+.navbar-fixed-bottom {
   text-align: center;
+  padding: 10px;
+  border-top: 2px solid black;
+}
+
+.navbar-fixed-bottom.bottomfooter {
+  position: absolute;
 }
 
 .alert-success, .alert-notice {
