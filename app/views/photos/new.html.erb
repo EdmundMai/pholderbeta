@@ -1,7 +1,7 @@
 <div class="clearfix">
 
 <div class="uploadreminder">
-	Upload multiple pictures at once or drag them directly to the browser!
+	Upload multiple pictures at once or drag them directly to the browser! <br>
 </div>
 <%= form_for([@user, @album, @photo], :html => { :multipart => true }) do |f| %>
 
@@ -19,10 +19,3 @@
 	<%= render :partial => "photo", :collection => @photos %>
 </div>
 
-<script id="template-upload" type="text/x-tmpl">
-<div class="upload">
-  {%=o.name%}
-  <div class="progress"><div class="bar" style="width: 0%"></div></div>
-</div>
-</script>
-</div>
