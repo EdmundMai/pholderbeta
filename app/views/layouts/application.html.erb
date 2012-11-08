@@ -8,10 +8,10 @@
   <%= favicon_link_tag "/favicon.ico?1" %>
 </head>
 <body class="clearfix">
-	<div class="bigwrapper">
+	<div class="bigwrapper clearfix">
 
 		<%= render 'layouts/header' %>
-		<div id="body clearfix">
+		<div id="body">
 		<% flash.each do |key, value| %>
 			<%= content_tag(:div, value, class: "alert alert-#{key}") %>
 		<% end %>
