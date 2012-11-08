@@ -44,7 +44,7 @@ module Pholder
       :enable_starttls_auto => true
     }
 
-    config.action_mailer.default_url_options = { :host => 'pacific-ravine-3563.herokuapp.com' }
+    config.action_mailer.default_url_options = { :host => 'https://pacific-ravine-3563.herokuapp.com' }
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
