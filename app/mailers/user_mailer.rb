@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "edmundmai@gmail.com"
+  default from: "pholderbeta@gmail.com"
 
   def registration_confirmation(user)
     @user = user
@@ -14,6 +14,6 @@ class UserMailer < ActionMailer::Base
 
   def contact_us(name, email, comments)
     @person = [name, email, comments]
-    mail(:to => "edmundmai@gmail.com", :subject => "#{name} <#{email}> has made comments")
+    mail(:to => "pholderbeta@gmail.com", :subject => "#{name} <#{email}> has made comments")
   end
 end
