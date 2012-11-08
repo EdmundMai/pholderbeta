@@ -39,10 +39,10 @@ module Pholder
       :user_name            => ENV["EMAIL"],
       :password             => ENV["PASSWORD"],
       :authentication       => "plain",
-      :enable_starttls_auto => true
+      :enable_starttls_auto => true,
       :domain               => "pacific-ravine-3563.herokuapp.com"
     }
-    
+
     config.action_mailer.default_url_options = { :host => "pacific-ravine-3563.herokuapp.com" }
 
     # Configure the default encoding used in templates for Ruby 1.9.
