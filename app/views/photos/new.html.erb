@@ -2,28 +2,29 @@
 
 <div class="clearfix">
 
-<div class="uploadreminder">
-	<h2>Upload multiple pictures at once or drag them directly to the browser!</h2>
-	<%= link_to "Back to album", user_album_path(@user, @album) %>
-</div>
-<%= form_for([@user, @album, @photo], :html => { :multipart => true }) do |f| %>
+	<div class="uploadreminder">
+		<h2>Upload multiple pictures at once or drag them directly to the browser!</h2>
+		<%= link_to "Back to album", user_album_path(@user, @album) %>
+	</div>
+	
+	<%= form_for([@user, @album, @photo], :html => { :multipart => true }) do |f| %>
 
-<%= f.file_field :avatar, multiple: true, name: "photo[avatar]" %>
+	<%= f.file_field :avatar, multiple: true, name: "photo[avatar]" %>
 
-<% end %>
+	<% end %>
 
 
 
-<div id="pics">
-	<%= render :partial => "photo", :collection => @photos %>
-</div>
+	<div id="pics">
+		<%= render :partial => "photo", :collection => @photos %>
+	</div>
 
-<script id="template-upload" type="text/x-tmpl">
-<div class="upload">
-  {%=o.name%}
-  <div class="progress"><div class="bar" style="width: 0%"></div></div>
-</div>
-</script>
+	<script id="template-upload" type="text/x-tmpl">
+	<div class="upload">
+	  {%=o.name%}
+	  <div class="progress"><div class="bar" style="width: 0%"></div></div>
+	</div>
+	</script>
 
 
 </div>

@@ -1,27 +1,27 @@
 <% provide(:title, @album.name) %>
 
 
-	<div class="hostwrapper">
-		<h3>Hosts:</h3>
+<div class="hostwrapper">
+	<h3>Hosts:</h3>
 
-		<%= render :partial => "users/profilepic", :collection => @album.users, :as => :user %>
+	<%= render :partial => "users/profilepic", :collection => @album.users, :as => :user %>
 	
-	</div>
+</div>
 
-	<div class="albumswrapper">
-		<div class="numberofpictures">
-			<h1><%= @album.name %></h1>
-			<h3>This album currently has <%= pluralize(@album.photos.count, "photo") %></h3>
+<div class="albumswrapper">
+	<div class="numberofpictures">
+		<h1><%= @album.name %></h1>
+		<h3>This album currently has <%= pluralize(@album.photos.count, "photo") %></h3>
 
-			<% if current_user.albums.include?(@album) %>
+		<% if current_user.albums.include?(@album) %>
 			<%= link_to "Upload new pics!", new_user_album_photo_path(@user, @album) %> |
 			<%= link_to "Edit album", edit_user_album_path(@user, @album) %> |
 			<%= link_to "Delete album", user_album_path(@user, @album), :method => :delete, data: { confirm: "Are you sure you want to delete this album?" } %> |
 			<%= link_to "View all albums", user_path(@user) %>
 
-			<% end %>
-		</div>
-
-		<%= render :partial => "photos/photo", :collection => @photos %>
-
+		<% end %>
 	</div>
+
+	<%= render :partial => "photos/photo", :collection => @photos %>
+
+</div>

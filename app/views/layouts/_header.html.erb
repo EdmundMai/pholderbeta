@@ -1,20 +1,20 @@
 
-		<nav class="clearfix">
-			<% if !signed_in? %>
-				<%= link_to "home", root_url %>
-			<% else %>
-				<%= link_to "my profile", current_user %>
-				<%= link_to "edit profile", edit_user_path(current_user) %>
-				<%= link_to "friends", user_friends_path(current_user) %>
-			<% end %>
+<nav class="clearfix">
+	<% if !signed_in? %>
+		<%= link_to "home", root_url %>
+	<% else %>
+		<%= link_to "my profile", current_user %>
+		<%= link_to "edit profile", edit_user_path(current_user) %>
+		<%= link_to "friends", user_friends_path(current_user) %>
+	<% end %>
 
-			<div class="rightnav">
-			<% if signed_in? %>
-				<%= link_to "active users", users_path %>
-				<%= link_to "log out", signout_path, method: "delete", :id =>"logoutlink" %>
-			<% else %>
-				<%= link_to "sign up", new_user_path, :id => "signuplink" %>
-				<%= link_to "log in", signin_path, :id => "loginlink" %>
-			<% end %>
-			</div>
-		</nav>
+	<div class="rightnav">
+		<% if signed_in? %>
+			<%= link_to "active users", users_path %>
+			<%= link_to "log out", signout_path, method: "delete", :id =>"logoutlink" %>
+		<% else %>
+			<%= link_to "sign up", new_user_path, :id => "signuplink" %>
+			<%= link_to "log in", signin_path, :id => "loginlink" %>
+		<% end %>
+	</div>
+</nav>

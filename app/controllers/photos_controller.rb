@@ -20,7 +20,6 @@ class PhotosController < ApplicationController
 	  @photo = @album.photos.find(params[:id])
 	  respond_to do |format|
 	    if @photo.destroy
-	      flash[:success] = "Photo successfully deleted."
 	      format.js
 		end
 	  end

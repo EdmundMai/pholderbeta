@@ -6,76 +6,68 @@
 		<%= link_to (image_tag "formlogo.png", :width => "200"), user_path(current_user) %>
 	</div>
 
-<h1 class="friends">My Friends</h1>
+	<h1 class="friends">My Friends</h1>
 
-<div class="friendsholder span12">
+	<div class="friendsholder span12">
+		<div class="pendingrequests span11">
+			<h3 class="friends">Pending requests</h3>
+			<% unless @user.pending_friends.empty? %>
+				<% @user.pending_friends.each do |pending_friend| %>
+				<div class="usersbox">
+					<%= link_to pending_friend.name, user_path(pending_friend) %>
 
-
-<div class="pendingrequests span11">
-<h3 class="friends">Pending requests</h3>
-<% unless @user.pending_friends.empty? %>
-<% @user.pending_friends.each do |pending_friend| %>
-		<div class="usersbox">
-		<%= link_to pending_friend.name, user_path(pending_friend) %>
-		<span class="floatright">
-			<%= link_to "Accept", user_friend_path(:user_id => current_user.id, :id => pending_friend), :method => :put, :confirm => "Are you sure?" %>
-			<%= link_to "Reject", user_friend_path(:user_id => current_user.id, :id => pending_friend), :method => :delete, :confirm => "Delete?" %>
-		</span>
+					<span class="floatright">
+						<%= link_to "Accept", user_friend_path(:user_id => current_user.id, :id => pending_friend), :method => :put, :confirm => "Are you sure?" %>
+						<%= link_to "Reject", user_friend_path(:user_id => current_user.id, :id => pending_friend), :method => :delete, :confirm => "Delete?" %>
+					</span>
+				</div>
+				<% end %>
+			<% else %>
+				<div class="usersbox">
+					You have no pending requests.
+				</div>
+			<% end %>
 		</div>
 
-<% end %>
-<% else %>
-<div class="usersbox">
-You have no pending requests.
-</div>
-<% end %>
+		<div class="currentfriends span5">
+			<h3 class="friends">Current Friends</h3>
 
-</div>
+			<% unless @user.friends.empty? %>
+				<% @user.friends.each do |friend| %>
+					<div class="usersbox">
+						<%= link_to (image_tag friend.profilepic? ? friend.profilepic : "questionmark.png", :size => "50x50"), user_path(friend) %>
+						<%= link_to friend.name, user_path(friend) %>
+						<span class="floatright">
+							<%= link_to "Remove", user_friend_path(:user_id => current_user.id, :id =>friend.id), :method => :delete, :confirm => "Delete friend?" %>
+						</span>
+					</div>
+				<% end %>
+			<% else %>
+				<div class="usersbox">
+					You currently have no friends. <%= link_to "Click here to find friends!", users_path %>
+				</div>
+			<% end %>
+		</div>
 
-<div class="currentfriends span5">
-	<h3 class="friends">Current Friends</h3>
+		<div class="friendrequests span5 offset1">
+			<h3 class="friends">Friend requests</h3>
 
-	<% unless @user.friends.empty? %>
-	<% @user.friends.each do |friend| %>
-	<div class="usersbox">
-			<%= link_to (image_tag friend.profilepic? ? friend.profilepic : "questionmark.png", :size => "50x50"), user_path(friend) %>
-			<%= link_to friend.name, user_path(friend) %>
-			<span class="floatright">
-				<%= link_to "Remove", user_friend_path(:user_id => current_user.id, :id =>friend.id), :method => :delete, :confirm => "Delete friend?" %>
-			</span>
+			<% unless @user.requested_friends.empty? %>
+				<% @user.requested_friends.each do |requested_friend| %>
+					<div class="usersbox">
+						<%= link_to (image_tag requested_friend.profilepic? ? requested_friend.profilepic : "questionmark.png", :size => "50x50"), user_path(requested_friend) %>
+						<%= link_to requested_friend.name, user_path(requested_friend) %>
+						<span class="floatright">
+							<%= link_to "Cancel", user_friend_path(:user_id => current_user.id, :id => requested_friend), :method => :delete, :confirm => "Are you sure?" %>
+						</span>
+					</div>
+				<% end %>
+			<% else %>
+				<div class="usersbox">
+					You have no friend requests.
+				</div>
+			<% end %>
+
+		</div>
 	</div>
-	<% end %>
-	<% else %>
-	<div class="usersbox">
-		You currently have no friends. <%= link_to "Click here to find friends!", users_path %>
-	</div>
-	<% end %>
-
-</div>
-
-<div class="friendrequests span5 offset1">
-
-	<h3 class="friends">Friend requests</h3>
-	<% unless @user.requested_friends.empty? %>
-	<% @user.requested_friends.each do |requested_friend| %>
-	<div class="usersbox">
-			<%= link_to (image_tag requested_friend.profilepic? ? requested_friend.profilepic : "questionmark.png", :size => "50x50"), user_path(requested_friend) %>
-			<%= link_to requested_friend.name, user_path(requested_friend) %>
-			<span class="floatright">
-				<%= link_to "Cancel", user_friend_path(:user_id => current_user.id, :id => requested_friend), :method => :delete, :confirm => "Are you sure?" %>
-			</span>
-	</div>
-	<% end %>
-	<% else %>
-	<div class="usersbox">
-	You have no friend requests.
-	</div>
-	<% end %>
-
-</div>
-
-
-
-</div>
-
 </div>

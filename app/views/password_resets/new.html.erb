@@ -1,19 +1,19 @@
 <% provide(:title, "Forgot password") %>
 
 <div id="passwordform">
-<h1>Forgot password?</h1>
-<p>Type in your email and we'll send you your password.</p>
+	<h1>Forgot password?</h1>
 
-<label>Email:</label>
+	<p>Type in your email and we'll send you your password.</p>
 
-<%= form_for :new_password, :url => password_resets_path do |f| %>
+	<label>Email:</label>
+	<%= form_for :new_password, :url => password_resets_path do |f| %>
 
-<%= f.text_field :email %>
+	<%= f.text_field :email %>
 
-<br>
+	<br>
 
-<%= f.submit "Submit", :id => "forgotpasswordbutton" %>
+	<%= f.submit "Submit", :id => "forgotpasswordbutton" %>
 
-<% end %>
+	<% end %>
 
 </div>

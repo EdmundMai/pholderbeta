@@ -16,8 +16,6 @@ Pholder::Application.routes.draw do
 
   resources :home, only: [:create]
 
-  match '/about',     to: 'home#about'
-  match '/feedback',  to: 'home#feedback'
   match '/contact',   to: 'home#contact'
   match '/signin',    to: 'sessions#new'
   match '/signout',   to: 'sessions#destroy', via: :delete

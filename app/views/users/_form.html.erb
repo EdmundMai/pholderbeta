@@ -3,30 +3,25 @@
 <%= form_for(@user) do |f| %>
 
 <div class="formhold">
-<div class="field">
-	<%= f.label :name %>
-	<%= f.text_field :name %>
-</div>
-<div class="field">
-	<%= f.label :email %>
-	<%= f.text_field :email %>
-</div>
-<div>
-	<%= f.label :password %>
-	<%= f.password_field :password %>
-</div>
-<div>
-	<%= f.label :password_confirmation, "Confirm password" %>
-	<%= f.password_field :password_confirmation %>
-</div>
-<div>
-	<%= f.submit 'Submit', :class => 'submitbutton' %>
-</div>
-
-
-
-
-
+	<div class="field">
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</div>
+	<div class="field">
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+	</div>
+	<div>
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+	</div>
+	<div>
+		<%= f.label :password_confirmation, "Confirm password" %>
+		<%= f.password_field :password_confirmation %>
+	</div>
+	<div>
+		<%= f.submit 'Submit', :class => 'submitbutton' %>
+	</div>
 </div>
 <% end %>
 
