@@ -1,3 +1,5 @@
+<% provide(:title, "Reset password") %>
+
 <%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>
 
 <%= f.label "Please enter your new password:" %> 
