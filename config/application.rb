@@ -33,17 +33,18 @@ module Pholder
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    ActionMailer::Base.smtp_settings = {
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
       :address              => "smtp.gmail.com",
       :port                 => 587,
+      :domain               => 'pacific-ravine-3563.herokuapp.com',
       :user_name            => ENV["EMAIL"],
       :password             => ENV["PASSWORD"],
       :authentication       => "plain",
-      :enable_starttls_auto => true,
-      :domain               => "pacific-ravine-3563.herokuapp.com"
+      :enable_starttls_auto => true
     }
 
-    config.action_mailer.default_url_options = { :host => "pacific-ravine-3563.herokuapp.com" }
+    config.action_mailer.default_url_options = { :host => 'pacific-ravine-3563.herokuapp.com' }
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
