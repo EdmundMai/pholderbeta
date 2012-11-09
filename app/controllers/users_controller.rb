@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 	  	if @user.save
 	  	  UserMailer.registration_confirmation(@user).deliver
 	  	  log_in(@user)
-	  	  format.html { redirect_to @user, notice: 'User successfully created.' }
+	  	  format.html { redirect_to @user, notice: "Welcome to Pholder, #{@user.name}!" }
 	  	  format.json { render json: @user, status: :created, location: @user }
 	  	else
 	  	  format.html { render action: 'new' }

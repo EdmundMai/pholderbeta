@@ -282,7 +282,7 @@ nav ul li {
 
 #sixthimg {
 	right: 330px;
-	bottom: 20px;
+	top: 30px;
 	-moz-transform: rotate(-30deg);
 	-webkit-transform: rotate(-30deg);
 	transform: rotate(-30deg);
@@ -291,6 +291,24 @@ nav ul li {
 #seventhimg {
 	bottom: 300px;
 	left: 20px;
+}
+
+#eighthimg {
+	left: 300px;
+	bottom: 200px;
+	-moz-transform: rotate(30deg);
+	-webkit-transform: rotate(30deg);
+	transform: rotate(30deg);
+}
+
+#ninthimg {
+	bottom: 100px;
+	left: 150px;
+}
+
+#tenthimg {
+	bottom: 225px;
+	left: 35px;
 }
 
 .intro {
@@ -335,7 +353,7 @@ nav ul li {
 }
 
 .top {
-	height: 400px;
+	height: 550px;
 	overflow: hidden;
 }
 
