@@ -1,19 +1,21 @@
 <% provide(:title, 'Edit profile') %>
 
+
+<div class="span12">
 <div class="editprofilelogo">
 	<%= link_to (image_tag "formlogo.png", :width => "200"), user_path(@user) %>
 </div>
 
 <%= form_for(@user) do |f| %>
-<div class="formhold">
+<div>
 
-	<div id="profpicbox">
+	<div id="profpicbox" class="span4 offset1">
 		<% if @user.profilepic? %>
 		<%= image_tag @user.profilepic.url, :id => "userpic" %>
 		<% end %>
 	</div>
 	
-	<div class="editprofform">
+	<div class="editprofform span4">
 		<div class="field">
 			<%= f.label :profilepic, "Profile Picture" %>
 			<%= f.file_field :profilepic %>
@@ -46,8 +48,8 @@
 		<% end %>
 	    </ul>
 	</div>
-
+	<% end %>
 </div>
-<% end %>
-<% end %>
 
+<% end %>
+</div>

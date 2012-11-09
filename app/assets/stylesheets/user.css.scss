@@ -34,10 +34,6 @@
 	background-color:#ce0100;
 }
 
-html, body {
-	margin: 0;
-	padding: 0;
-}
 
 .field input {
 	height: 30px;
@@ -55,6 +51,19 @@ label {
 a {
 	text-decoration: underline;
 	color: black;
+}
+
+.editprofilelogo {
+	text-align: center;
+}
+
+#profpicbox {
+	width: 400px;
+}
+
+.editprofform {
+	width: 200px;
+	float: left;
 }
 
 .submitbutton {
@@ -86,6 +95,9 @@ a {
 	visibility: hidden;
 }
 
+.alert-danger, .alert-error {
+	color: white;
+}
 
 .search {
 	background: white;
@@ -101,6 +113,9 @@ footer {
   	padding: 5px;
 }
 
+#bottomfooter {
+	position: absolute;
+}
 
 nav {
 	border-bottom: 2px solid black;
@@ -303,7 +318,7 @@ nav ul li {
 }
 
 #tenthimg {
-	bottom: 300px;
+	bottom: 260px;
 	left: 35px;
 }
 
@@ -326,3 +341,276 @@ nav ul li {
 	position:relative;
 	top:1px;
 }
+
+#error_exp {
+	float: right;
+	width: 300px;
+	padding: 20px;
+	margin: 0 auto;
+	border: 1px solid red;
+	position: relative;
+	bottom: 300px;
+	background: white;
+}
+
+.formhold {
+	width: 700px;
+	margin: 0 auto;
+}
+
+.sidepara {
+	float: right;
+	width: 300px;
+}
+
+.top {
+	height: 620px;
+}
+
+.logo {
+	width: 300px;
+	padding: 20px;
+}
+
+.pholderpopup {
+	width: 300px;
+	position: absolute;
+	left: 350px;
+	bottom: 395px;
+	padding: 15px;
+	border-radius: 5px;
+	z-index: 1000;
+	background: rgb(251,249,234);
+	font: Times;
+}
+
+.arrow-left {
+	width: 0px; 
+	height: 0px; 
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent; 
+	border-right:10px solid rgb(251,249,234); 
+	position: absolute;
+	left: 340px;
+	top: 65px;
+}
+
+
+.formholder {
+	float: left;
+	width: 300px;
+}
+
+.redborder {
+	border: 1px solid red;
+}
+
+#signupsubmit {
+	-moz-box-shadow:inset 0px 1px 13px 0px #f29c93;
+	-webkit-box-shadow:inset 0px 1px 13px 0px #f29c93;
+	box-shadow:inset 0px 1px 13px 0px #f29c93;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fe1a00), color-stop(1, #ce0100) );
+	background:-moz-linear-gradient( center top, #fe1a00 5%, #ce0100 100% );
+	background-color:#fe1a00;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #d83526;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:26px;
+	font-weight:bold;
+	padding:18px 44px;
+	text-decoration:none;
+	text-shadow:1px 1px 5px #b23e35;
+	margin-top: 30px;
+	margin-left: 60px;
+}
+
+#signupsubmit:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ce0100), color-stop(1, #fe1a00) );
+	background:-moz-linear-gradient( center top, #ce0100 5%, #fe1a00 100% );
+	background-color:#ce0100;
+}
+
+#signupsubmit:active {
+	position:relative;
+	top:1px;
+}
+
+
+label {
+	display: block;
+}
+
+form {
+	margin: 20px;
+}
+
+form span {
+	color: red;
+}
+
+h1 {
+	font-size: 36px;
+	margin: 10px 10px;
+}
+
+
+#error {
+	color: red;
+}
+
+html, body {
+  margin: 0 auto;
+  height: 100%;
+}
+
+.upload {
+  border-top: solid 1px #CCC;
+  width: 400px;
+  padding-top: 10px;
+  margin-top: 10px;
+
+  .progress {
+    margin-top: 8px;
+    border: solid 1px #555;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    .bar {
+      height: 10px;
+      background: #3EC144;
+    }
+  }
+}
+
+#passwordform {
+  width: 400px;
+  margin: 0 auto;
+}
+
+#forgotlink {
+  margin: 0 25px;
+}
+
+.friendsholder {
+  margin :0 30px;
+}
+
+.albumlinks {
+	text-align: center;
+}
+
+#body {
+  padding-bottom: 35px;
+}
+
+.bigwrapper {
+	width: 960px;
+	margin: 0 auto;
+	height: auto !important;
+  	min-height: 100%;
+  	position: relative;
+}
+
+.alert-error {
+  border: 1px solid red;
+  background: red;
+  opacity: .6;
+}
+
+h1 {
+  color: red;
+}
+
+h1.black {
+  color: black;
+}
+
+
+
+.alert-success, .alert-notice {
+	border: 1px solid green;
+	background: lime;
+	opacity: 0.6;
+}
+
+.uploadreminder {
+  padding: 20px;
+}
+
+.finisheduploading {
+  padding: 0 20px;
+}
+
+#signinbutton, #forgotpasswordbutton, #newalbumbutton {
+    -moz-box-shadow:inset 0px 1px 13px 0px #f29c93;
+  -webkit-box-shadow:inset 0px 1px 13px 0px #f29c93;
+  box-shadow:inset 0px 1px 13px 0px #f29c93;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fe1a00), color-stop(1, #ce0100) );
+  background:-moz-linear-gradient( center top, #fe1a00 5%, #ce0100 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fe1a00', endColorstr='#ce0100');
+  background-color:#fe1a00;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:1px solid #d83526;
+  display:inline-block;
+  color:#ffffff;
+  font-family:arial;
+  font-size:26px;
+  font-weight:bold;
+  padding:18px 44px;
+  text-decoration:none;
+  text-shadow:1px 1px 5px #b23e35;
+  margin: 15px 0;
+}
+
+.signinform {
+  width: 400px;
+  margin: 50px auto;
+}
+
+
+
+#checkbox {
+  display: inline;
+}
+
+#rememberme {
+  display: inline;
+}
+
+.miniprofilepic {
+	margin-top: 10px;
+}
+
+.hostwrapper, .friendwrapper {
+	width: 200px;
+	float: right;
+	min-height: 400px;
+}
+
+.friendwrapper {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.textalignleft {
+  text-align: left;
+  margin-left: 30px;
+}
+
+#signinheader {
+  color: red;
+}
+
+.usersbox {
+	border: 1px solid black;
+}
+
+.floatright {
+	float: right;
+}
+
