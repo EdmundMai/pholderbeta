@@ -1,57 +1,62 @@
-	<% provide(:title, show_username) %>
+<% provide(:title, show_username) %>
 
 
-	<div class="friendwrapper clearfix">
-		<%= link_to (image_tag @user.profilepic? ? @user.profilepic : "questionmark.png", :size => "150x150", :class => "miniprofilepic"), (if current_user == @user then edit_user_path(@user) else user_path(@user) end) %> 
+<div class="container-fluid">
+	<div class="row-fluid">
 
-		<h3><%= user_name(@user) %> friends:</h3>
-		<div class="textalignleft"> 
-		<%= render :partial => 'profilepic', :collection => @user.friends, :as => :user %>
+
+		<div class="span10 clearfix">
+
+			<div class="numberofalbums">
+
+				<% if current_user == @user %>
+					<h1>You currently have <%= pluralize(@user.albums.count, "album") %></h1>
+					<%= link_to "Create a new album!", new_user_album_path(@user) %>
+				<% else %>
+					<h1><%= @user.name %> currently has <%= pluralize(@user.albums.count, "album") %></h1>
+				<% end %>
+
+			</div>
+
+			<div>
+
+				<% if signed_in? %>
+					<% unless @user == current_user || current_user.requested_friends.include?(@user) || current_user.friends.include?(@user) || current_user.pending_friends.include?(@user) %>
+						<%= form_for(:friendship, :url => user_friends_path(:user_id => current_user.id, :friend_id => @user.id)) do |f| %>
+						<%= f.submit "Add to my Friends" %>
+						<% end %>
+					<% end %>
+				<% end %>
+
+					<% if current_user == @user || @user.friends.include?(current_user) %>
+						<% @user.albums.each do |album| %>
+						<div class="albumthumb">
+							<div class="albumpic">
+							<%= link_to image_tag(!album.photos.empty? ? album.photos.first.avatar.url(:medium) : ("questionmark.png"), :size => "150x150"), user_album_path(@user, album) %>
+							</div>
+							<br>
+							<%= album.name %>
+						</div>
+						<% end %>
+					<% else %>
+						<div>
+							<h2>You are not friends with <%= @user.name %>.</h2>
+						</div>
+
+					<% end %>
+			</div>
+
 		</div>
-	</div>
 
-<div class="albumswrapper clearfix">
+				<div class="friendwrapper clearfix">
+			<%= link_to (image_tag @user.profilepic? ? @user.profilepic : "questionmark.png", :size => "150x150", :class => "miniprofilepic"), (if current_user == @user then edit_user_path(@user) else user_path(@user) end) %> 
 
-	<div class="numberofalbums">
-
-		<% if current_user == @user %>
-			<h1>You currently have <%= pluralize(@user.albums.count, "album") %></h1>
-			<%= link_to "Create a new album!", new_user_album_path(@user) %>
-		<% else %>
-			<h1><%= @user.name %> currently has <%= pluralize(@user.albums.count, "album") %></h1>
-		<% end %>
+			<h4><%= user_name(@user) %> friends:</h4>
+			<div class="textalignleft"> 
+			<%= render :partial => 'profilepic', :collection => @user.friends, :as => :user %>
+			</div>
+		</div>
 
 	</div>
-
-	<div>
-
-		<% if signed_in? %>
-			<% unless @user == current_user || current_user.requested_friends.include?(@user) || current_user.friends.include?(@user) || current_user.pending_friends.include?(@user) %>
-				<%= form_for(:friendship, :url => user_friends_path(:user_id => current_user.id, :friend_id => @user.id)) do |f| %>
-				<%= f.submit "Add to my Friends" %>
-				<% end %>
-			<% end %>
-		<% end %>
-
-			<% if current_user == @user || @user.friends.include?(current_user) %>
-				<% @user.albums.each do |album| %>
-				<div class="albumthumb">
-					<div class="albumpic">
-					<%= link_to image_tag(!album.photos.empty? ? album.photos.first.avatar.url(:medium) : ("questionmark.png"), :size => "150x150"), user_album_path(@user, album) %>
-					</div>
-					<br>
-					<%= album.name %>
-				</div>
-				<% end %>
-			<% else %>
-				<div>
-					<h2>You are not friends with <%= @user.name %>.</h2>
-				</div>
-
-			<% end %>
-	</div>
-
-
-
 </div>
-	
+			

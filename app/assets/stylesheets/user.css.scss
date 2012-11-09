@@ -217,7 +217,13 @@ nav ul li {
 .albumthumb, .picthumb {
 	float: left;
 	margin: 5px;
+	padding: 5px;
 	border: 2px solid black;
+}
+
+.albumpic {
+	height: 150px;
+	width: 150px;
 }
 
 .picthumb {
@@ -587,9 +593,8 @@ h1.black {
 }
 
 .hostwrapper, .friendwrapper {
-	width: 200px;
+	width: 150px;
 	float: right;
-	min-height: 400px;
 }
 
 .friendwrapper {
