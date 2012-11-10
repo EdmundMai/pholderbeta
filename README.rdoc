@@ -6,7 +6,8 @@ Pholder is a social image viewing web app for members are able to exclusively sh
 The general model structure of the app is: users, albums, photos. The catch is that albums can have multiple users,
 so that ownership is shared among people, allowing "invited" users to upload/edit/delete pics together.
 
-I would be more than happy to take any suggestions since I am looking to improve this app.
+This is my first elaborate Rails app, so I would be more than happy to take any suggestions since I am looking to 
+constantly add new features to it.
 
 
 Notes:
