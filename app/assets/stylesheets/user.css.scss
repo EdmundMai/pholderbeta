@@ -66,6 +66,10 @@ a {
 	float: left;
 }
 
+.addtofriendsholder {
+	text-align: center;
+}
+
 .submitbutton {
 	@include redbutton;
 	margin: 10px 10px 10px 0px;

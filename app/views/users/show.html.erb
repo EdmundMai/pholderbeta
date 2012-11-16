@@ -18,8 +18,7 @@
 
 			</div>
 
-			<div>
-
+			<div class="addtofriendsholder">
 				<% if signed_in? %>
 					<% unless @user == current_user || current_user.requested_friends.include?(@user) || current_user.friends.include?(@user) || current_user.pending_friends.include?(@user) %>
 						<%= form_for(:friendship, :url => user_friends_path(:user_id => current_user.id, :friend_id => @user.id)) do |f| %>
@@ -28,22 +27,22 @@
 					<% end %>
 				<% end %>
 
-					<% if current_user == @user || @user.friends.include?(current_user) %>
-						<% @user.albums.each do |album| %>
-						<div class="albumthumb">
-							<div class="albumpic">
-							<%= link_to image_tag(!album.photos.empty? ? album.photos.first.avatar.url(:medium) : ("questionmark.png"), :size => "150x150"), user_album_path(@user, album) %>
-							</div>
-							<br>
-							<%= album.name %>
-						</div>
-						<% end %>
-					<% else %>
-						<div>
-							<h2>You are not friends with <%= @user.name %>.</h2>
-						</div>
 
+				<% if current_user == @user || @user.friends.include?(current_user) %>
+					<% @user.albums.each do |album| %>
+					<div class="albumthumb">
+						<div class="albumpic">
+							<%= link_to image_tag(!album.photos.empty? ? album.photos.first.avatar.url(:medium) : ("questionmark.png"), :size => "150x150"), user_album_path(@user, album) %>
+						</div>
+						<br>
+						<%= album.name %>
+					</div>
 					<% end %>
+				<% else %>
+					<div>
+						<h2>You are not friends with <%= @user.name %>.</h2>
+					</div>
+				<% end %>
 			</div>
 
 		</div>
